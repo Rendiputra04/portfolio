@@ -5,7 +5,7 @@ const portfolioData = {
   linkedin: "https://www.linkedin.com/in/rendiputra04",
   whatsappNumber: "6285877537894",
   whatsappLabel: "0858-7753-7894",
-  profileImage: "assets/profile-rendi.jpg",
+  profileImage: "profile-rendi.jpg",
   focus: [
     "Membangun aplikasi backend menggunakan Java Spring Boot",
     "Mendesain tampilan website responsif dengan HTML, CSS, dan Bootstrap",
