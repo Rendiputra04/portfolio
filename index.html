@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio s| Rendi Putra</title>
+  <meta name="description" content="Portofolio Rendi Putra, mahasiswa S1 Sistem Informasi semester 6 yang menampilkan project Java Spring Boot, MySQL, frontend web, dan analisis data Python." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#hero" class="logo"> RendiPutra </a>
+      <nav>
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Project</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero container section reveal">
+      <div class="hero-text">
+        <span class="eyebrow">PORTFOLIO PROGRAMMER 2026</span>
+        <h1>Halo, saya <span class="accent" id="displayName">Rendi Putra</span>.<br> Saya membangun aplikasi, website, dan solusi data dengan tampilan modern.</h1>
+        <p class="lead" id="headline"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Lihat Project</a>
+          <a class="btn btn-secondary" id="linkedinBtn" href="https://www.linkedin.com/in/rendiputra04" target="_blank" rel="noreferrer">LinkedIn Saya</a>
+          <a class="btn btn-whatsapp" id="whatsappBtn" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+        <div class="stats">
+          <div class="stat-card">
+            <strong id="projectCount">03+</strong>
+            <span>Project Ditampilkan</span>
+          </div>
+          <div class="stat-card">
+            <strong>Semester 6</strong>
+            <span>Mahasiswa S1 Sistem Informasi</span>
+          </div>
+          <div class="stat-card">
+            <strong>Learning & Building</strong>
+            <span>Java, Web, Database, Python</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal delay-1">
+        <div class="profile-wrap glass float-card">
+          <img src="assets/profile-rendi.jpg" alt="Foto profil Rendi Putra" class="profile-image" id="profileImage" />
+          <div class="profile-badge badge-top">Open to Internship</div>
+          <div class="profile-badge badge-bottom">Java • Web • Data</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container section reveal">
+      <div class="section-heading">
+        <span class="section-label">Tentang Saya</span>
+        <h2>Mahasiswa yang aktif membangun project backend, frontend, dan analisis data.</h2>
+      </div>
+      <div class="about-grid">
+        <article class="glass card reveal delay-1">
+          <h3>Profil Singkat</h3>
+          <p id="aboutText"></p>
+        </article>
+        <article class="glass card reveal delay-2">
+          <h3>Fokus Pengembangan</h3>
+          <ul class="check-list" id="focusList"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="container section reveal">
+      <div class="section-heading">
+        <span class="section-label">Tech Stack</span>
+        <h2>Skill yang saya gunakan dalam proses belajar dan pengerjaan project.</h2>
+        <p>
+          Saya berfokus pada pengembangan aplikasi berbasis Java Spring Boot, frontend web dengan HTML/CSS/Bootstrap, database MySQL, serta analisis data menggunakan Python di Google Colab.
+        </p>
+      </div>
+      <div class="chips" id="skillChips"></div>
+    </section>
+
+    <section id="projects" class="container section reveal">
+      <div class="section-heading row-between">
+        <div>
+          <span class="section-label">Project</span>
+          <h2>Project yang sudah saya kerjakan dan siap dibagikan ke LinkedIn.</h2>
+        </div>
+        <a class="text-link" href="https://www.linkedin.com/in/rendiputra04" target="_blank" rel="noreferrer">Lihat juga di LinkedIn →</a>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <section class="container section reveal">
+      <div class="cta glass shimmer-card">
+        <div>
+          <span class="section-label">Personal Branding</span>
+          <h2>Siap digunakan untuk melamar magang, freelance, dan membangun profil profesional.</h2>
+          <p>Portfolio ini sudah dilengkapi foto profil, tombol WhatsApp, LinkedIn, dan tampilan modern untuk membantu personal branding saat melamar magang atau membangun jaringan profesional.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="#contact">Hubungi Saya</a>
+          <a class="btn btn-secondary" id="whatsappBtn2" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">Chat WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section reveal">
+      <div class="section-heading">
+        <span class="section-label">Kontak</span>
+        <h2>Mari terhubung.</h2>
+      </div>
+      <div class="contact-grid contact-grid-3">
+        <a class="contact-card glass" href="https://www.linkedin.com/in/rendiputra04" target="_blank" rel="noreferrer">
+          <span>LinkedIn</span>
+          <strong>linkedin.com/in/rendiputra04</strong>
+        </a>
+        <a class="contact-card glass" id="whatsappCard" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer">
+          <span>WhatsApp</span>
+          <strong id="whatsappText">+62 800-0000-0000</strong>
+        </a>
+        <div class="contact-card glass disabled-card">
+          <span>GitHub</span>
+          <strong>Belum tersedia</strong>
+          <small>Disarankan membuat akun GitHub untuk menampilkan source code project.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-wa" id="floatingWhatsapp" href="https://wa.me/6280000000000" target="_blank" rel="noreferrer" aria-label="Chat WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <footer class="footer container">
+    <p>© <span id="year"></span> <span id="footerName">Rendi Putra</span>. Dibuat untuk membangun personal brand sebagai programmer.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

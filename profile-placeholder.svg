@@ -1,0 +1,22 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="600" rx="48" fill="#0B1629"/>
+  <circle cx="300" cy="260" r="120" fill="#13233C"/>
+  <path d="M150 510C176 418 261 380 300 380C339 380 424 418 450 510" fill="#13233C"/>
+  <circle cx="300" cy="260" r="86" fill="url(#paint0_linear_1_2)"/>
+  <path d="M201 510C219 430 279 402 300 402C321 402 381 430 399 510" fill="url(#paint1_linear_1_2)"/>
+  <circle cx="470" cy="120" r="52" fill="#122746" stroke="#77F7D1" stroke-opacity="0.3"/>
+  <circle cx="130" cy="150" r="36" fill="#10213B" stroke="#6EA8FE" stroke-opacity="0.35"/>
+  <path d="M451.07 132.95V106.77H459.15V132.14C459.15 138.08 462.04 141.11 467.2 141.11C472.36 141.11 475.25 138.08 475.25 132.14V106.77H483.33V132.95C483.33 143.03 477.57 148.44 467.2 148.44C456.79 148.44 451.07 143.03 451.07 132.95Z" fill="#E6EDF7"/>
+  <path d="M97.92 154.95V128.77H106V154.14C106 160.08 108.89 163.11 114.05 163.11C119.21 163.11 122.1 160.08 122.1 154.14V128.77H130.18V154.95C130.18 165.03 124.42 170.44 114.05 170.44C103.64 170.44 97.92 165.03 97.92 154.95Z" fill="#E6EDF7"/>
+  <text x="300" y="560" fill="#E6EDF7" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="middle">Rendi Putra</text>
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="214" y1="174" x2="386" y2="346" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EA8FE"/>
+      <stop offset="1" stop-color="#77F7D1"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_1_2" x1="201" y1="402" x2="399" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EA8FE"/>
+      <stop offset="1" stop-color="#77F7D1"/>
+    </linearGradient>
+  </defs>
+</svg>
