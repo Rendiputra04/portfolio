@@ -54,8 +54,8 @@ nav a {
 
 /* FOTO */
 .profile {
-    width: 120px;      /* ubah ukuran di sini */
-    height: 120px;     /* harus sama biar bulat */
+    width: 100px;      /* ubah ukuran di sini */
+    height: 100px;     /* harus sama biar bulat */
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #38bdf8;
