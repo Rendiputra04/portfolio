@@ -15,21 +15,14 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: #020617;
-    position: sticky;
-    top: 0;
+    align-items: center;
+    padding: 20px 0; /* ubah */
 }
 
-nav ul {
+nav .container {
     display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* CONTAINER */
