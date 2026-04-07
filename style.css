@@ -87,3 +87,17 @@ form input, form textarea {
         font-size: 24px;
     }
 }
+.profile {
+    text-align: center;
+    padding: 40px;
+}
+
+.foto {
+    border-radius: 50%;
+    width: 120px;
+}
+
+.social a {
+    margin: 10px;
+    text-decoration: none;
+}
