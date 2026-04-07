@@ -64,7 +64,7 @@ nav .container {
 }
 
 .btn:hover {
-    background: white;
+    transform: translateY(-2px);
 }
 
 /* BUTTON WRAPPER */
@@ -98,6 +98,10 @@ nav .container {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.card {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .card {
