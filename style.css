@@ -11,6 +11,14 @@ body {
     overflow-x: hidden;
 }
 
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
 /* NAVBAR */
 nav {
     display: flex;
