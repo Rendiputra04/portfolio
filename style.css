@@ -41,18 +41,11 @@ nav a {
 
 /* HERO */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    padding-top: 40px; /* tambahkan ini */
 }
 
 .profile {
