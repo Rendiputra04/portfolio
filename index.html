@@ -2,62 +2,39 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Rendi</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- AOS (Animasi) -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav>
-    <h2 class="logo">MyPortfolio</h2>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <h2>Rendi</h2>
+    <div>
+        <button onclick="toggleDarkMode()">🌙</button>
+    </div>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero">
-    <h1>Halo, Saya <span>Rendi Putra</span></h1>
+<section class="hero" data-aos="fade-up">
+    <h1>Halo, Saya Rendi</h1>
     <p>Mahasiswa Sistem Informasi</p>
-    <button onclick="scrollToSection('project')">Lihat Project</button>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-    <h2>Tentang Saya</h2>
-    <p>
-        Saya adalah mahasiswa Sistem Informasi yang tertarik pada
-        pengembangan web, database, dan teknologi digital.
-    </p>
 </section>
 
 <!-- PROJECT -->
-<section id="project" class="project">
-    <h2>Project Saya</h2>
-
-    <div class="card-container">
-        <div class="card">
-            <h3>Aplikasi Absensi</h3>
-            <p>Website absensi karyawan berbasis web.</p>
-        </div>
-
-        <div class="card">
-            <h3>Sistem Tiket Online</h3>
-            <p>Project mirip M-TIX untuk pemesanan tiket.</p>
-        </div>
-
-        <div class="card">
-            <h3>Portfolio Website</h3>
-            <p>Website pribadi menggunakan HTML, CSS, JS.</p>
-        </div>
-    </div>
+<section class="project">
+    <h2 data-aos="fade-up">Project Saya</h2>
+    <div id="project-list" class="card-container"></div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section class="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <form onsubmit="kirimPesan(event)">
         <input type="text" placeholder="Nama" required>
@@ -67,10 +44,9 @@
     </form>
 </section>
 
-<footer>
-    <p>© 2026 Rendi Putra</p>
-</footer>
-
+<!-- SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
