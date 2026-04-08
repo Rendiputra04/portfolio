@@ -65,20 +65,20 @@ img {
   width: 320px;
   height: 320px;
   object-fit: cover;
-  object-position: 50% 5%;
+  object-position: 50% 0%;
   border-radius: 24px;
   border: 3px solid rgba(56, 189, 248, 0.25);
   box-shadow: var(--shadow);
   animation: floatImage 4s ease-in-out infinite;
+  transform: translateY(-20px);
 }
 
-/* ANIMATION FOTO */
 @keyframes floatImage {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(-20px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-30px);
   }
 }
 
