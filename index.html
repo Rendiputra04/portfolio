@@ -13,23 +13,23 @@
 <body>
   <header class="header">
     <div class="container nav">
-      <a href="#" class="logo">RendiPutra</a>
+      <a href="#home" class="logo">RendiPutra</a>
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#project">Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
           <p class="eyebrow">Portfolio Website</p>
           <h1>Rendi Putra</h1>
-          <h2>Programmer | Database & Sistem Informasi</h2>
+          <h2><span id="typing-text"></span></h2>
           <p class="hero-desc">
             Saya adalah programmer yang memiliki minat pada pengembangan web,
             database, dan sistem informasi. Saya senang membangun aplikasi yang
@@ -38,12 +38,22 @@
 
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">Lihat Project</a>
-            <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a href="mailto:rendiputraa2004@gmail.com" class="btn btn-outline">Email</a>
           </div>
         </div>
 
         <div class="hero-image">
-          <img src="profile.jpg" alt="Foto Rendi Putra" />
+          <div class="hero-image-wrap">
+            <img src="profile.jpg" alt="Foto Rendi Putra" />
+          </div>
         </div>
       </div>
     </section>
@@ -159,8 +169,21 @@
         <div class="contact-card">
           <p>Tertarik bekerja sama atau ingin melihat profil saya lebih lanjut?</p>
           <div class="contact-list">
-            <a href="mailto:rendiputraa2004@gmail.com">rendiputraa2004@gmail.com</a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:rendiputraa2004@gmail.com">Email</a>
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Rendi%2C%20saya%20ingin%20menghubungi%20Anda."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a
+              href="https://github.com/usernamekamu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -172,6 +195,16 @@
       <p>© 2025 Rendi Putra. All rights reserved.</p>
     </div>
   </footer>
+
+  <a
+    href="https://wa.me/6281234567890?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
+    class="floating-wa"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat WhatsApp"
+  >
+    WA
+  </a>
 
   <script src="script.js"></script>
 </body>
