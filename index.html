@@ -1,62 +1,178 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Rendi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- AOS (Animasi) -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendi Putra | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio Rendi Putra - Programmer, Database, dan Sistem Informasi."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<!-- NAVBAR -->
-<nav>
-    <h2>Rendi</h2>
-    <div>
-        <button onclick="toggleDarkMode()">🌙</button>
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">RendiPutra</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<section class="h-screen flex flex-col justify-center items-center bg-gray-900 text-white">
-    <h1 class="text-4xl font-bold">Halo, Saya Rendi</h1>
-    <p class="mt-2 text-gray-300">Web Developer</p>
-</section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Portfolio Website</p>
+          <h1>Rendi Putra</h1>
+          <h2>Programmer | Database & Sistem Informasi</h2>
+          <p class="hero-desc">
+            Saya adalah programmer yang memiliki minat pada pengembangan web,
+            database, dan sistem informasi. Saya senang membangun aplikasi yang
+            terstruktur, efisien, dan mudah digunakan.
+          </p>
 
-<!-- PROJECT -->
-<section class="project">
-    <h2 data-aos="fade-up">Project Saya</h2>
-    <div id="project-list" class="card-container"></div>
-</section>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Lihat Project</a>
+            <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+          </div>
+        </div>
 
-<!-- CONTACT -->
-<section class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <form onsubmit="kirimPesan(event)">
-        <input type="text" placeholder="Nama" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Pesan" required></textarea>
-        <button type="submit">Kirim</button>
-    </form>
-    <section class="profile">
-    <img src="https://via.placeholder.com/150" class="foto">
-    <h2>Rendi Putra</h2>
-    <p>Mahasiswa Sistem Informasi | Web Developer</p>
+        <div class="hero-image">
+          <img src="profile.jpg" alt="Foto Rendi Putra" />
+        </div>
+      </div>
+    </section>
 
-    <div class="social">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-title">
+          <p>About Me</p>
+          <h3>Tentang Saya</h3>
+        </div>
+
+        <div class="about-card">
+          <p>
+            Saya memiliki kemampuan dalam HTML, CSS, JavaScript, Python, C++,
+            PHP, dan MySQL. Fokus saya ada pada pengembangan website, pengolahan
+            data, dan perancangan database untuk sistem informasi.
+          </p>
+          <p>
+            Saya tertarik untuk terus berkembang sebagai programmer yang mampu
+            membuat solusi digital yang bermanfaat, rapi, dan profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <p>Skills</p>
+          <h3>Teknologi yang Saya Kuasai</h3>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">HTML</div>
+          <div class="skill-card">CSS</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">Python</div>
+          <div class="skill-card">C++</div>
+          <div class="skill-card">PHP</div>
+          <div class="skill-card">MySQL</div>
+          <div class="skill-card">Database Design</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-title">
+          <p>Projects</p>
+          <h3>Project Unggulan</h3>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-tag">Web App</span>
+              <h4>Sistem Informasi Manajemen Data</h4>
+              <p>
+                Aplikasi berbasis web untuk mengelola data dengan fitur login,
+                CRUD, dan tampilan data yang terstruktur.
+              </p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-tag">Database</span>
+              <h4>Perancangan Database Sistem Informasi</h4>
+              <p>
+                Mendesain database untuk kebutuhan sistem informasi dengan
+                struktur tabel, relasi data, dan query yang efisien.
+              </p>
+              <div class="project-tech">
+                <span>MySQL</span>
+                <span>ERD</span>
+                <span>SQL</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-tag">Programming</span>
+              <h4>Mini Project Pemrograman</h4>
+              <p>
+                Mengembangkan program sederhana untuk latihan logika,
+                pengolahan data, dan implementasi dasar algoritma.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>C++</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <p>Contact</p>
+          <h3>Hubungi Saya</h3>
+        </div>
+
+        <div class="contact-card">
+          <p>Tertarik bekerja sama atau ingin melihat profil saya lebih lanjut?</p>
+          <div class="contact-list">
+            <a href="mailto:rendiputraa2004@gmail.com">rendiputraa2004@gmail.com</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Rendi Putra. All rights reserved.</p>
     </div>
-</section>
-</section>
+  </footer>
 
-<!-- SCRIPT -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
