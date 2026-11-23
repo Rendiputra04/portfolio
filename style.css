@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   background:
     radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 25%),
     linear-gradient(180deg, #0f172a 0%, #111827 100%);
@@ -38,53 +38,40 @@ img {
   display: block;
 }
 
-/* HERO IMAGE FIX */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image-wrap {
-  position: relative;
-}
-
-.hero-image-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(37, 211, 102, 0.18));
-  filter: blur(16px);
-  z-index: 0;
-}
-
-.hero-image img {
-  position: relative;
-  z-index: 1;
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  object-position: 50% 0%;
-  border-radius: 24px;
-  border: 3px solid rgba(56, 189, 248, 0.25);
-  box-shadow: var(--shadow);
-  animation: floatImage 4s ease-in-out infinite;
-  transform: translateY(-20px);
-}
-
-@keyframes floatImage {
-  0%, 100% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Fokus keyboard yang jelas */
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 2000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #082f49;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 8px;
 }
 
 .container {
@@ -92,6 +79,7 @@ a {
   margin: 0 auto;
 }
 
+/* ================= HEADER ================= */
 .header {
   position: sticky;
   top: 0;
@@ -146,25 +134,12 @@ nav a.active::after {
   width: 100%;
 }
 
+/* ================= HERO ================= */
 .hero {
   padding: 90px 0 50px;
   min-height: 90vh;
   display: flex;
   align-items: center;
-}
-
-.project-video {
-  width: 100%;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.project-video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
 .hero-grid {
@@ -174,17 +149,48 @@ nav a.active::after {
   align-items: center;
 }
 
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--white);
 }
 
 .hero h2 {
-  color: var(--muted);
+  margin-top: 6px;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .hero-desc {
-  margin: 20px 0;
+  margin: 20px 0 16px;
   color: #cbd5e1;
+  max-width: 56ch;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.hero-tags li {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-buttons {
@@ -194,6 +200,7 @@ nav a.active::after {
 }
 
 .btn {
+  display: inline-block;
   padding: 12px 22px;
   border-radius: 999px;
   font-weight: bold;
@@ -209,16 +216,73 @@ nav a.active::after {
   color: #082f49;
 }
 
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
 .btn-secondary {
   background: var(--wa);
-  color: white;
+  color: #052e16;
+}
+
+.btn-secondary:hover {
+  background: var(--wa-dark);
 }
 
 .btn-outline {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* SECTION */
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* HERO IMAGE */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(37, 211, 102, 0.18));
+  filter: blur(16px);
+  z-index: 0;
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: 24px;
+  border: 3px solid rgba(56, 189, 248, 0.25);
+  box-shadow: var(--shadow);
+  animation: floatImage 4s ease-in-out infinite;
+  transform: translateY(-20px);
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* ================= SECTION ================= */
 .section {
   padding: 70px 0;
 }
@@ -227,8 +291,21 @@ nav a.active::after {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.section-title {
+  margin-bottom: 28px;
+}
+
+.section-title p {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .section-title h3 {
   font-size: 2rem;
+  color: var(--white);
 }
 
 .about-card,
@@ -238,10 +315,41 @@ nav a.active::after {
   border-radius: 20px;
 }
 
-/* SKILLS */
+.about-card p + p {
+  margin-top: 12px;
+}
+
+/* Timeline (aktif jika kamu membuka komentar di index.html) */
+.timeline {
+  margin-top: 24px;
+  padding-left: 18px;
+  border-left: 2px solid var(--line);
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+/* ================= SKILLS ================= */
+.skills-groups {
+  display: grid;
+  gap: 26px;
+}
+
+.skill-group h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
 }
 
@@ -257,10 +365,93 @@ nav a.active::after {
   transform: translateY(-5px);
 }
 
-/* PROJECT */
+/* ================= PROJECTS ================= */
+.project-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.project-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.featured-project {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--card);
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.featured-project h4 {
+  font-size: 1.4rem;
+  color: var(--white);
+  margin: 6px 0 8px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.12);
+  border-radius: 999px;
+}
+
+.case-study {
+  margin: 16px 0 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.case-study dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.case-study dd {
+  color: #cbd5e1;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.screenshots img {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.subheading {
+  margin: 40px 0 16px;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
@@ -275,18 +466,59 @@ nav a.active::after {
   transform: translateY(-6px);
 }
 
-/* CONTACT */
+.project-card h4 {
+  margin: 8px 0;
+  color: var(--white);
+}
+
+.project-card p {
+  color: #cbd5e1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.project-tech span {
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* ================= CONTACT ================= */
+.contact-email {
+  margin: 8px 0 18px;
+  color: var(--primary);
+  font-weight: 600;
+  word-break: break-all;
+}
+
 .contact-list {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-/* FLOATING WA */
+/* ================= FOOTER ================= */
+.footer {
+  padding: 28px 0 90px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ================= FLOATING WA ================= */
 .floating-wa {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 900;
   width: 55px;
   height: 55px;
   background: var(--wa);
@@ -294,7 +526,7 @@ nav a.active::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #052e16;
   font-weight: bold;
   animation: pulse 2s infinite;
 }
@@ -304,16 +536,84 @@ nav a.active::after {
   70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
 }
 
-/* RESPONSIVE */
+/* ================= ANIMASI SAAT SCROLL ================= */
+/* Kelas .reveal hanya ditambahkan oleh JavaScript, jadi tanpa JS konten tetap tampil. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 860px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 700px) {
-  .hero-grid,
-  .projects-grid,
-  .skills-grid {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  nav {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 50px 0 30px;
+  }
+
+  .hero-grid {
     grid-template-columns: 1fr;
   }
 
+  .hero-image {
+    order: -1;
+  }
+
   .hero-image img {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-title h3 {
+    font-size: 1.6rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Hormati pengguna yang mematikan animasi di perangkatnya */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-image img {
+    transform: none;
   }
 }

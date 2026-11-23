@@ -1,77 +1,54 @@
-const reveals = document.querySelectorAll(".hero, .section");
-const navLinks = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("main section");
+(() => {
+  const sections = document.querySelectorAll("main section");
+  const navLinks = document.querySelectorAll("header nav a");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
+  // 1. Animasi muncul saat di-scroll
+  //    (dilewati jika browser tidak mendukung atau pengguna mematikan animasi,
+  //    sehingga konten tidak pernah tersembunyi)
+  if ("IntersectionObserver" in window && !prefersReducedMotion) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".hero, .section").forEach((section) => {
+      section.classList.add("reveal");
+      observer.observe(section);
+    });
+  }
+
+  // 2. Menu navigasi aktif sesuai bagian yang sedang dilihat
+  function updateActiveNav() {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
       }
     });
-  },
-  {
-    threshold: 0.15,
+
+    navLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+    });
   }
-);
 
-reveals.forEach((section) => {
-  section.classList.add("reveal");
-  observer.observe(section);
-});
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  updateActiveNav();
 
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-const typingText = document.getElementById("typing-text");
-const roles = [
-  "Programmer",
-  "Database Developer",
-  "Web Developer",
-  "Sistem Informasi"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-  const currentRole = roles[roleIndex];
-  const displayedText = currentRole.substring(0, charIndex);
-  typingText.textContent = displayedText;
-
-  if (!isDeleting && charIndex < currentRole.length) {
-    charIndex++;
-    setTimeout(typeEffect, 100);
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(typeEffect, 50);
-  } else {
-    isDeleting = !isDeleting;
-
-    if (!isDeleting) {
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
-
-    setTimeout(typeEffect, isDeleting ? 1200 : 300);
+  // 3. Tahun di footer selalu mengikuti tahun saat ini
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
-}
-
-typeEffect();
+})();

@@ -3,17 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rendi Putra | Portfolio</title>
+  <title>Rendi Putra | Web Developer - PHP, MySQL & Sistem Informasi</title>
   <meta
     name="description"
-    content="Portfolio Rendi Putra - Programmer, Database, dan Sistem Informasi."/>
+    content="Portfolio Rendi Putra, web developer yang fokus pada PHP, MySQL, database, dan sistem informasi. Lihat project dan hubungi saya."
+  />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Tampilan saat link dibagikan (WhatsApp, LinkedIn, dll) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rendi Putra | Web Developer" />
+  <meta
+    property="og:description"
+    content="Web developer yang fokus pada PHP, MySQL, database, dan sistem informasi."
+  />
+  <meta property="og:url" content="https://rendiputra04.github.io/portfolio/" />
+  <meta property="og:image" content="https://rendiputra04.github.io/portfolio/profile.jpg" />
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f172a'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%2338bdf8' font-family='Arial' font-weight='700'%3ERP%3C/text%3E%3C/svg%3E"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Lewati ke konten</a>
+
   <header class="header">
     <div class="container nav">
       <a href="#home" class="logo">RendiPutra</a>
-      <nav>
+      <nav aria-label="Navigasi utama">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -22,23 +41,38 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- ================= HERO ================= -->
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow">Portfolio Website</p>
+          <p class="eyebrow">Portfolio</p>
           <h1>Rendi Putra</h1>
-          <h2><span id="typing-text"></span></h2>
+          <h2>Web Developer &middot; PHP, MySQL &amp; Sistem Informasi</h2>
           <p class="hero-desc">
-            Saya adalah programmer yang memiliki minat pada pengembangan web,
-            database, dan sistem informasi. Saya senang membangun aplikasi yang
-            terstruktur, efisien, dan mudah digunakan.
+            Saya membangun aplikasi web yang terstruktur, efisien, dan mudah
+            digunakan, mulai dari perancangan database hingga tampilan yang rapi.
           </p>
+
+          <ul class="hero-tags" aria-label="Teknologi utama">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>JavaScript</li>
+            <li>HTML &amp; CSS</li>
+            <li>Python</li>
+          </ul>
 
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">Lihat Project</a>
+
+            <!--
+              TODO (CV): upload file CV kamu ke folder ini (misal: cv-rendi-putra.pdf),
+              lalu hapus tanda komentar pada tombol di bawah.
+            <a href="cv-rendi-putra.pdf" class="btn btn-outline" download>Unduh CV</a>
+            -->
+
             <a
-              href="https://wa.me/6281234567890?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
+              href="https://wa.me/6285877537894?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
               class="btn btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
@@ -51,12 +85,19 @@
 
         <div class="hero-image">
           <div class="hero-image-wrap">
-            <img src="profile.jpg" alt="Foto Rendi Putra" />
+            <img
+              src="profile.jpg"
+              alt="Foto Rendi Putra"
+              width="320"
+              height="320"
+              fetchpriority="high"
+            />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= ABOUT ================= -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-title">
@@ -74,10 +115,29 @@
             Saya tertarik untuk terus berkembang sebagai programmer yang mampu
             membuat solusi digital yang bermanfaat, rapi, dan profesional.
           </p>
+
+          <!--
+            TODO (Pendidikan & Pengalaman): isi dengan data aslimu, lalu hapus tanda komentar.
+            Contoh: kampus + jurusan + tahun, magang, organisasi, freelance, sertifikat.
+
+          <ul class="timeline">
+            <li>
+              <span class="timeline-date">2022 - sekarang</span>
+              <strong>Nama Kampus / Jurusan</strong>
+              <p>Keterangan singkat.</p>
+            </li>
+            <li>
+              <span class="timeline-date">2024</span>
+              <strong>Magang / Organisasi / Freelance</strong>
+              <p>Apa yang kamu kerjakan dan hasilnya.</p>
+            </li>
+          </ul>
+          -->
         </div>
       </div>
     </section>
 
+    <!-- ================= SKILLS ================= -->
     <section id="skills" class="section section-alt">
       <div class="container">
         <div class="section-title">
@@ -85,64 +145,126 @@
           <h3>Teknologi yang Saya Kuasai</h3>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-card">HTML</div>
-          <div class="skill-card">CSS</div>
-          <div class="skill-card">JavaScript</div>
-          <div class="skill-card">Python</div>
-          <div class="skill-card">C++</div>
-          <div class="skill-card">PHP</div>
-          <div class="skill-card">MySQL</div>
-          <div class="skill-card">Database Design</div>
+        <div class="skills-groups">
+          <div class="skill-group">
+            <h4>Backend &amp; Database</h4>
+            <div class="skills-grid">
+              <div class="skill-card">PHP</div>
+              <div class="skill-card">MySQL</div>
+              <div class="skill-card">Database Design</div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Frontend</h4>
+            <div class="skills-grid">
+              <div class="skill-card">HTML</div>
+              <div class="skill-card">CSS</div>
+              <div class="skill-card">JavaScript</div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4>Pemrograman Umum</h4>
+            <div class="skills-grid">
+              <div class="skill-card">Python</div>
+              <div class="skill-card">C++</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= PROJECTS ================= -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-title">
           <p>Projects</p>
           <h3>Project Unggulan</h3>
         </div>
-  
-        <div class="project-video">
-  <iframe
-    src="https://www.youtube.com/embed/boyrF9lvXdk"
-    title="Demo Project"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-content">
-              <span class="project-tag">Web App</span>
-              <h4>Sistem Informasi Manajemen Data</h4>
-              <p>
-                Aplikasi berbasis web untuk mengelola data dengan fitur login,
-                CRUD, dan tampilan data yang terstruktur.
-              </p>
-              
-              <div class="project-tech">
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>HTML</span>
-                <span>CSS</span>
+
+        <!-- Project utama (studi kasus) -->
+        <article class="featured-project">
+          <div class="project-video">
+            <iframe
+              src="https://www.youtube.com/embed/boyrF9lvXdk"
+              title="Demo Sistem Informasi Manajemen Data"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="project-content">
+            <span class="project-tag">Web App</span>
+            <h4>Sistem Informasi Manajemen Data</h4>
+            <p>
+              Aplikasi berbasis web untuk mengelola data secara terstruktur,
+              lengkap dengan sistem login dan pengelolaan data.
+            </p>
+
+            <dl class="case-study">
+              <div>
+                <dt>Fitur utama</dt>
+                <dd>Login pengguna, tambah / ubah / hapus data (CRUD), dan tampilan data yang terstruktur.</dd>
               </div>
+              <div>
+                <dt>Teknologi</dt>
+                <dd>PHP, MySQL, HTML, CSS</dd>
+              </div>
+              <!--
+                TODO (Studi kasus): tambahkan 2-3 poin ini dengan data aslimu agar lebih meyakinkan.
+              <div>
+                <dt>Masalah</dt>
+                <dd>Data sebelumnya dicatat manual sehingga sulit dicari dan rawan salah.</dd>
+              </div>
+              <div>
+                <dt>Peran saya</dt>
+                <dd>Merancang database, membuat backend PHP, dan membuat tampilan.</dd>
+              </div>
+              <div>
+                <dt>Hasil</dt>
+                <dd>Contoh: pencarian data jadi lebih cepat, data tersimpan rapi di satu tempat.</dd>
+              </div>
+              -->
+            </dl>
+
+            <div class="project-links">
+              <!-- TODO: ganti link GitHub ini dengan link repo project (contoh: https://github.com/Rendiputra04/nama-repo) -->
+              <a
+                href="https://github.com/Rendiputra04"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kode di GitHub
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=boyrF9lvXdk"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tonton Demo
+              </a>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="project-card">
-  <div class="project-video">
-    <iframe src="https://www.youtube.com/embed/boyrF9lvXdk"></iframe>
-  </div>
+        <!--
+          TODO (Screenshot): tambahkan 3-4 screenshot aplikasi (login, dashboard, form, tabel data).
+          Simpan di folder "images/", lalu hapus tanda komentar.
 
-  <div class="project-content">
-    <h4>Sistem Informasi</h4>
-    <p>Deskripsi project...</p>
-  </div>
-</article>
+        <div class="screenshots">
+          <img src="images/login.jpg" alt="Halaman login" loading="lazy" />
+          <img src="images/dashboard.jpg" alt="Halaman dashboard" loading="lazy" />
+          <img src="images/data.jpg" alt="Tabel data" loading="lazy" />
+        </div>
+        -->
 
+        <!-- Project lainnya -->
+        <h4 class="subheading">Project Lainnya</h4>
+        <div class="projects-grid">
           <article class="project-card">
             <div class="project-content">
               <span class="project-tag">Programming</span>
@@ -158,10 +280,28 @@
               </div>
             </div>
           </article>
+
+          <!--
+            TODO: project "Sistem Informasi" yang kedua. Tambahkan lagi setelah deskripsi dan
+            demo-nya sendiri sudah siap (jangan pakai video yang sama dengan project pertama).
+
+          <article class="project-card">
+            <div class="project-content">
+              <span class="project-tag">Web App</span>
+              <h4>Nama Project</h4>
+              <p>Deskripsi singkat: apa fungsinya dan masalah apa yang diselesaikan.</p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+              </div>
+            </div>
+          </article>
+          -->
         </div>
       </div>
     </section>
 
+    <!-- ================= CONTACT ================= -->
     <section id="contact" class="section section-alt">
       <div class="container">
         <div class="section-title">
@@ -171,10 +311,14 @@
 
         <div class="contact-card">
           <p>Tertarik bekerja sama atau ingin melihat profil saya lebih lanjut?</p>
+          <p class="contact-email">
+            <a href="mailto:rendiputraa2004@gmail.com">rendiputraa2004@gmail.com</a>
+          </p>
           <div class="contact-list">
-            <a href="mailto:rendiputraa2004@gmail.com">Email</a>
+            <a href="mailto:rendiputraa2004@gmail.com" class="btn btn-primary">Email</a>
             <a
               href="https://wa.me/6285877537894?text=Halo%20Rendi%2C%20saya%20ingin%20menghubungi%20Anda."
+              class="btn btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -182,6 +326,7 @@
             </a>
             <a
               href="https://github.com/Rendiputra04"
+              class="btn btn-outline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -195,12 +340,12 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Rendi Putra. All rights reserved.</p>
+      <p>&copy; <span id="year">2026</span> Rendi Putra. All rights reserved.</p>
     </div>
   </footer>
 
   <a
-    href="https://wa.me/6281234567890?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
+    href="https://wa.me/6285877537894?text=Halo%20Rendi%2C%20saya%20tertarik%20dengan%20portfolio%20Anda."
     class="floating-wa"
     target="_blank"
     rel="noopener noreferrer"
